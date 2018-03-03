@@ -13,7 +13,7 @@ RUN  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add - && 
      stable" \
      && apt update -y && apt-get install docker-ce -y
 COPY . .
-RUN wget https://github.com/kubernetes-incubator/kubespray/requirements.txt 
+RUN wget https://github.com/kubernetes-incubator/kubespray/blob/master/requirements.txt
 RUN mkdir tests
 WORKDIR tests
 RUN wget https://github.com/kubernetes-incubator/kubespray/blob/master/tests/requirements.txt
