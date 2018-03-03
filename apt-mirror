@@ -11,4 +11,7 @@ RUN  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add - && 
      $(lsb_release -cs) \
      stable" 
 COPY . .
-RUN /usr/bin/python -m pip install pip -U  
+RUN /usr/bin/python -m pip install pip -U && apt-get install apt-mirror && apt-get install vsftpd
+RUN wget https://github.com/mythmoon/gcr.io/blob/master/mirror.list && cp -f mirror.list /etc/apt/
+RUN apt-mirror
+
