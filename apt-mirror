@@ -12,4 +12,3 @@ RUN  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add - && 
      stable" 
 COPY . .
 RUN /usr/bin/python -m pip install pip -U  
-RUN apt-mirror
