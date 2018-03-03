@@ -1,10 +1,10 @@
 FROM ubuntu:17.10
-RUN mkdir /apt-mirror && mkdir /var/spool/apt-mirror
+RUN mkdir /apt-mirror   && chmod -R 777 /apt-mirror
 WORKDIR /apt-mirror
 RUN apt update -y && \
     apt install -y \
     libssl-dev python-dev sshpass apt-transport-https \
-    ca-certificates curl gnupg2 software-properties-common python-pip apt-mirror vsftpd
+    ca-certificates curl gnupg2 software-properties-common python-pip
 RUN  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add - && \
      add-apt-repository \
      "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
@@ -12,6 +12,6 @@ RUN  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add - && 
      stable" 
 COPY . .
 RUN /usr/bin/python -m pip install pip -U && apt-get install apt-mirror && apt-get install vsftpd
-RUN wget https://github.com/mythmoon/gcr.io/blob/master/mirror.list && cp -f mirror.list /etc/apt/
+RUN wget https://github.com/mythmoon/gcr.io/blob/master/mirror.list && cp -f mirror.list /etc/apt/ 
 RUN apt-mirror
 
