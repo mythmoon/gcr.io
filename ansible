@@ -14,6 +14,6 @@ RUN  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add - && 
      && apt update -y && apt-get install docker-ce -y
 COPY . .
 RUN /usr/bin/python -m pip install pip -U 
-RUN pip install -r  pbr>=1.6 ansible>=2.4.0 netaddr jinja2>=2.9.6 
-RUN pip install -r  yamllint apache-libcloud==2.2.1 boto==2.9.0 tox dopy PyCrypto
+RUN pip install  pbr>=1.6 ansible>=2.4.0 netaddr jinja2>=2.9.6 
+RUN pip install  yamllint apache-libcloud==2.2.1 boto==2.9.0 tox dopy PyCrypto
 
