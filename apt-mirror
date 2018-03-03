@@ -1,7 +1,7 @@
 FROM mythmoon/apt-mirror:ubuntu17.10
 WORKDIR /apt-mirror
 RUN  chmod -R 777 /apt-mirror
-RUN  wget https://codeload.github.com/mythmoon/gcr.io/zip/master && more master/mirror.list
+RUN  wget https://codeload.github.com/mythmoon/gcr.io/zip/master && unzip master.zip && more master/mirror.list
 RUN rm -rf /etc/apt/mirror.list && cp -f master/mirror.list /etc/apt/ 
 RUN apt-mirror
 
