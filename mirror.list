@@ -1,0 +1,22 @@
+ 
+############# config ##################
+# 以下注释的内容都是默认配置，如果需要自定义，取消注释修改即可
+set base_path /apt-mirror
+#
+# 镜像文件下载地址
+# set mirror_path $base_path/mirror
+# 临时索引下载文件目录，也就是存放软件仓库的dists目录下的文件（默认即可）
+# set skel_path $base_path/skel
+# 配置日志（默认即可）
+# set var_path $base_path/var
+# clean脚本位置
+# set cleanscript $var_path/clean.sh
+# 架构配置，i386/amd64，默认的话会下载跟本机相同的架构的源
+set defaultarch amd64
+# set postmirror_script $var_path/postmirror.sh
+# set run_postmirror 0
+# 下载线程数
+set nthreads 20
+set _tilde 0
+#
+############# end config ##############
