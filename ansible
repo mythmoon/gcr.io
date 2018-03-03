@@ -14,6 +14,6 @@ RUN  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add - && 
      && apt update -y && apt-get install docker-ce -y
 COPY . .
 RUN mkdir tests
-ADD https://github.com/kubernetes-incubator/kubespray/requirements.txt requirements.txt 
-ADD https://github.com/kubernetes-incubator/kubespray/blob/master/tests/requirements.txt tests/requirements.txt
+RUN wget https://github.com/kubernetes-incubator/kubespray/requirements.txt requirements.txt 
+RUN wget https://github.com/kubernetes-incubator/kubespray/blob/master/tests/requirements.txt tests/requirements.txt
 RUN /usr/bin/python -m pip install pip -U && /usr/bin/python -m pip install -r tests/requirements.txt && python -m pip install -r requirements.txt
