@@ -1,5 +1,5 @@
 FROM mythmoon/ansible2:2.4
 
 WORKDIR /ansible2.4
-RUN apt install -y vim curl
+RUN apt install -y vim curl expect
 
