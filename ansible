@@ -3,5 +3,5 @@ FROM mythmoon/ansible2:2.4
 RUN mkdir /ansible2.4
 WORKDIR /ansible2.4
 RUN apt install -y \
-    vi vim 
+    vi vim ping
 
