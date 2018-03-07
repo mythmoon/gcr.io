@@ -1,16 +1,14 @@
 FROM ubuntu:17.10
 
-RUN mkdir /kubespray
-WORKDIR /kubespray
+RUN mkdir /ansible2.4
+WORKDIR /ansible2.4
 RUN apt update -y && \
     apt install -y \
     libssl-dev python-dev sshpass apt-transport-https \
     ca-certificates curl gnupg2 software-properties-common python-pip wget
 RUN  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add - && \
      add-apt-repository \
-     "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-     $(lsb_release -cs) \
-     stable" \
+     "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" 
      && apt update -y && apt-get install docker-ce -y
 COPY . .
 RUN /usr/bin/python -m pip install pip -U 
