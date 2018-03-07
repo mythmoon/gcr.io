@@ -1,17 +1,7 @@
-FROM ubuntu:17.10
+FROM mythmoon/ansible2:2.4
 
 RUN mkdir /ansible2.4
 WORKDIR /ansible2.4
-RUN apt update -y && \
-    apt install -y \
-    libssl-dev python-dev sshpass apt-transport-https \
-    ca-certificates curl gnupg2 software-properties-common python-pip wget
-RUN  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add - && \
-     add-apt-repository \
-     "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" \
-     && apt update -y && apt-get install docker-ce -y
-COPY . .
-RUN /usr/bin/python -m pip install pip -U 
-RUN pip install  pbr>=1.6 ansible>=2.4.0 netaddr jinja2>=2.9.6 
-RUN pip install  yamllint apache-libcloud==2.2.1 boto==2.9.0 tox dopy PyCrypto
+RUN apt install -y \
+    vi vim 
 
