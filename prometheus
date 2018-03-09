@@ -1,1 +1,1 @@
-form quay.io/prometheus/prometheus:latest
+from quay.io/prometheus/prometheus:latest
