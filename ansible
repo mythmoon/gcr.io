@@ -1,5 +1,7 @@
 FROM mythmoon/ansible2:2.4
 
 WORKDIR /ansible2.4
-RUN apt install -y vim curl expect
+#RUN apt install -y vim curl expect
+RUN wget https://kubernetes-helm.storage.googleapis.com/helm-v2.8.1-linux-amd64.tar.gz
+
 
