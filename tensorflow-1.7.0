@@ -1,4 +1,4 @@
-FROM mythmoon/ansible2
+FROM mythmoon/ansible2:2.4
 RUN mkdir /data
 WORKDIR /data
 RUN pip install --no-cache-dir absl-py==0.1.13  astor==0.6.2 backports.weakref==1.0.post1
